@@ -1,0 +1,15 @@
+function exc { 
+    echo ">>> EXEC $*"
+    nim action invoke db/sql -p exec "$*" | jq .
+}
+
+function table { 
+    echo ">>> ARR $*"
+    nim action invoke db/sql -p arr "$*" | jq .
+}
+
+function query { 
+    echo ">>> MAP $*"
+    nim action invoke db/sql -p map "$*" | jq .
+}
+
